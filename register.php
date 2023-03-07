@@ -1,3 +1,6 @@
+<?php 
+    require_once "assets/includes/sessions.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,78 +16,59 @@
 <body>
     <!-- NAVBAR -->
     <section>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" alt="logo" width="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Recent Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register">Register</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <?php 
+        include_once "assets/includes/nav.inc.php";
+      ?>
     </section>
 
     <!-- Register Form -->
     <section>
         <div class="container mt-5">
-            <form action="" class="card mx-auto shadow" style="max-width: 600px;">
+            <form action="assets/config/register.con.php" method="POST" class="card mx-auto shadow" style="max-width: 600px;">
+            
+        
+            <div class="p-2">
+                <?php echo successMessage(); echo errorMessage(); ?>
+            </div>
+
             <h5 class="card-header bg-white">Create an Account</h5>
                 <div class="row card-body">
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Full Name:</label>
-                        <input type="text" name="" class="form-control" id="">
+                        <input type="text" name="full_name" class="form-control" id="" required>
                     </div>
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Email:</label>
-                        <input type="email" name="" class="form-control" id="">
+                        <input type="email" name="email" class="form-control" id="" required>
                     </div>
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Phone Number:</label>
-                        <input type="tel" name="" class="form-control" id="">
+                        <input type="tel" name="phone" class="form-control" id="" required>
                     </div>
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Date of birth:</label>
-                        <input type="date" name="" class="form-control" id="">
+                        <input type="date" name="dob" class="form-control" id="" required>
                     </div>
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Password:</label>
-                        <input type="password" name="" class="form-control" id="">
+                        <input type="password" name="password" class="form-control" id="" required>
                     </div>
                     <div class="col-md-6 mb-2">
                         <label  class="form-label">Confirm Password:</label>
-                        <input type="password" name="" class="form-control" id="">
+                        <input type="password" name="password_confirm" class="form-control" id="" required>
                     </div>
 
                     <div class="col-12 my-3">
-                        <button class="btn btn-dark">
+                        <button class="btn btn-dark" name="register">
                             Register
                         </button>
                     </div>
                 </div>
             </form>
+            
         </div>
     </section>
 </body>
 
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 </html>
