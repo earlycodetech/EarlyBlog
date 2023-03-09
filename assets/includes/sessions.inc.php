@@ -31,5 +31,12 @@
         return $output;
     }
    }
+
+   function authGuard(){
+        if (!isset($_SESSION['user'])) {
+            $_SESSION['error_msg'] = "You are not authorized to view this page!";
+            header('Location: ../login');
+        }
+   }
 ?>
 
