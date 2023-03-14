@@ -12,7 +12,7 @@
                             <a class="nav-link active" aria-current="page" href="index">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">New Post</a>
+                            <a class="nav-link" href="new-post">New Post</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../assets/config/logout">Logout</a>

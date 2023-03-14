@@ -52,6 +52,7 @@
             }else{
                 /*============= Authorize the User ==================*/ 
                 $_SESSION['user'] = $row['id'];
+                $_SESSION['name'] = $row['full_name'];
                 header("Location: ../../app/dashboard");
             }
         }
