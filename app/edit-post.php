@@ -35,7 +35,7 @@
     <?php include_once "../assets/includes/app_nav.inc.php"; ?>
     <div class="container my-3">
         <?php  echo errorMessage(); echo successMessage(); ?>
-         <form class="card my-3" method="POST" action="../assets/config/new_post.php" enctype="multipart/form-data">
+         <form class="card my-3" method="POST" action="../assets/config/edit_post_con.php?update=<?php echo $postId ?>" enctype="multipart/form-data">
                 <p class="fs3 card-header">Edit Post</p>
 
                 <div class="card-body">
@@ -47,7 +47,7 @@
                         <?php echo $post['post']; ?>
                     </textarea>
 
-                    <button class="btn btn-primary my-4" name="new-post">Add New Post</button>
+                    <button class="btn btn-primary my-4" name="edit-post">Update</button>
                 </div>
             </form>
       

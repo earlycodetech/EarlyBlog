@@ -51,7 +51,36 @@
                                     <td><?php echo $row['created_at'] ?></td>
                                     <td>
                                         <a href="edit-post?post=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                        <!-- <a 
+                                            onclick="return confirm('Are you sure you want to delete this record, once deleted, it cannot be gotten back')"
+                                            href="../assets/config/del_post?del=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm">Delete</a> -->
+
+                                                                                <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Delete
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                           <h3 class="text-danger"> Are you sure you want to delete this record</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <a 
+                                            onclick="return confirm('Are you sure you want to delete this record, once deleted, it cannot be gotten back')"
+                                            href="../assets/config/del_post?del=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -60,5 +89,8 @@
                 </div>
             </form>
     </div>
+
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
