@@ -15,6 +15,9 @@
                             <a class="nav-link" href="new-post">New Post</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="all-posts">View Posts</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="../assets/config/logout">Logout</a>
                         </li>
                     </ul>

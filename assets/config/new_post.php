@@ -28,6 +28,7 @@
         // 3. Get the file extension
         $ext = explode('.',$fileName);
         $ext = end($ext);
+        $ext = strtolower($ext);
         
 
         // 3. Check if the file is allowed
