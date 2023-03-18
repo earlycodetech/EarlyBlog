@@ -12,7 +12,7 @@
                             <a class="nav-link active" aria-current="page" href="index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Recent Post</a>
+                            <a class="nav-link" href="contact">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login">Login</a>

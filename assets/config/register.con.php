@@ -22,8 +22,25 @@
 
         //3. Build Constraint to make sure they provide correct data
 
+         # Check if the user has an account with us
+         $sql = "SELECT * FROM users WHERE email = ?";
+         $stmt = mysqli_stmt_init($connectDb);
+         mysqli_stmt_prepare($stmt,$sql);
+         mysqli_stmt_bind_param($stmt,"s",$email);
+ 
+         $execute = mysqli_stmt_execute($stmt);
+ 
+         $result = mysqli_stmt_get_result($stmt);
+ 
+         $numRows = mysqli_num_rows($result);
+ 
+         #check if user does not have an email with us
+         if ($numRows > 0) {
+             $_SESSION['error_msg'] = "This email already exists!";
+             header("Location: ../../register");
+         }
         #check if any of the value is empty
-        if ($fullName === ""  || $email === "" || $dob === "" || $phone === "" || $password === "" || $password_confirm === ""  ) {
+        elseif ($fullName === ""  || $email === "" || $dob === "" || $phone === "" || $password === "" || $password_confirm === ""  ) {
             $_SESSION['error_msg'] = "Fields cannot be empty!";
             header("Location: ../../register");
         }
